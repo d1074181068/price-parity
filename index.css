@@ -254,6 +254,13 @@ body {
     margin-left: 10px;
 }
 
+.search_area .search_btn:hover {
+    padding: 11px 53px;
+    border: 1px solid #899e39;
+    background-color: white;
+    color: #899e39;
+}
+
 .search_adjust {
     display: flex;
     justify-content: space-between;
