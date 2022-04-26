@@ -1,0 +1,319 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+} */
+
+
+/*reset end */
+
+body {
+    background-image: url(./images/bg.jpg);
+    background-size: 100%;
+}
+
+.wrap {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.header a {
+    display: block;
+    width: 450px;
+    height: 105px;
+    background-image: url(./images/logo.png);
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    background-color: white;
+    /* box-shadow: 0px 0px 10px #fffcef; */
+    box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav .active {
+    background-color: #f8d45a;
+}
+
+.nav li {
+    padding: 8px 40px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 4px;
+}
+
+.nav li:hover {
+    background-color: #faebd7;
+    cursor: pointer;
+}
+
+.nav .fruit {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav .other {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.search_area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search_input {
+    display: flex;
+    border-radius: 4px;
+    background-color: #899e39;
+    width: 351px;
+}
+
+.search_input label {
+    display: inline-block;
+    background-color: #899e39;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    align-self: center;
+    width: 100px;
+}
+
+.search_input input {
+    border: none;
+    border: 2px solid #899e39;
+    background-color: white;
+    padding: 10px;
+    flex-shrink: inherit;
+    flex-grow: 1;
+}
+
+.search_area .search_btn {
+    display: block;
+    padding: 12px 54px;
+    background-color: #899e39;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.search_adjust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_adjust>p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.condition {
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+.content {
+    width: 100%;
+}
+
+.content thead tr {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    background: #f4f1ea;
+}
+
+.content thead th {
+    padding: 15px;
+    width: 14%;
+    font-weight: bold;
+}
+
+.content tbody td {
+    padding: 20px;
+    border-bottom: 2px solid gray;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page_ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page_ul a {
+    display: block;
+    padding: 8px;
+    margin: 5px;
+    text-decoration: none;
+    color: #899e39;
+}
+
+.page_ul a:hover {
+    background-color: #899e39;
+    color: white;
+}
+
+.replace {
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid gray;
+}

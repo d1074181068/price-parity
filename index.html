@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>
+                <a href="#">produce 農產品比價網</a>
+            </h1>
+        </div>
+        <div class="container">
+            <ul class="nav">
+                <li class="veg">蔬菜</li>
+                <li class="fruit">水果</li>
+                <li class="flower">花卉</li>
+                <li class="other">其他</li>
+                <li class="all">所有</li>
+            </ul>
+
+            <div class="search_area">
+                <div class="search_input">
+                    <label for="input">作物名稱</label>
+                    <input type="text" class="input" name="input" id="input" placeholder="請輸入作物名稱" />
+                </div>
+                <a href="#" class="search_btn">搜尋</a>
+            </div>
+            <div class="search_adjust">
+                <p>查看 「」的查詢結果</p>
+                <select class="condition">
+            <option disabled selected>請選擇資料排列條件</option>
+            <option>依上價排序</option>
+            <option>依中價排序</option>
+            <option>依下價排序</option>
+            <option>依平均價排序</option>
+            <option>依交易量排序</option>
+          </select>
+            </div>
+            <table class="content">
+                <thead>
+                    <tr>
+                        <th>作物名稱</th>
+                        <th>市場名稱</th>
+                        <th>上價</th>
+                        <th>中價</th>
+                        <th>下價</th>
+                        <th>平均價</th>
+                        <th>交易量</th>
+                    </tr>
+                </thead>
+
+                <tbody></tbody>
+            </table>
+            <ul class="page_ul" id="page_ul"></ul>
+            <p class="replace"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
