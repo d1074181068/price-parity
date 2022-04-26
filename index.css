@@ -150,10 +150,11 @@ table {
 body {
     background-image: url(./images/bg.jpg);
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .wrap {
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -162,6 +163,7 @@ body {
     width: 450px;
     height: 105px;
     background-image: url(./images/logo.png);
+    background-repeat: no-repeat;
     text-indent: 101%;
     white-space: nowrap;
     overflow: hidden;
@@ -169,7 +171,6 @@ body {
 
 .container {
     background-color: white;
-    /* box-shadow: 0px 0px 10px #fffcef; */
     box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     padding: 40px;
@@ -301,26 +302,68 @@ body {
     font-weight: bold;
 }
 
-.page_ul {
+.select {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.page_ul a {
-    display: block;
+.page {
+    border: 1px solid gray;
+    margin-top: 20px;
     padding: 8px;
-    margin: 5px;
-    text-decoration: none;
-    color: #899e39;
-}
-
-.page_ul a:hover {
-    background-color: #899e39;
-    color: white;
 }
 
 .replace {
     text-align: center;
     padding: 30px;
     border-bottom: 1px solid gray;
+}
+
+@media (max-width: 820px) {
+    .wrap {
+        width: 90%;
+    }
+    .header a {
+        background-image: url(./images/logo-sm.png);
+        background-repeat: no-repeat;
+        width: 178px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    .nav {
+        flex-wrap: wrap;
+    }
+    .nav li {
+        margin-bottom: 10px;
+    }
+    .search_area {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search_input {
+        max-width: 320px;
+    }
+    .search_area .search_btn {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .search_adjust {
+        flex-direction: column;
+    }
+    .search_adjust p {
+        margin-bottom: 20px;
+    }
+    .data_table {
+        overflow-x: auto;
+    }
+    .content {
+        width: 768px;
+    }
+    .content thead th {
+        padding: 10px 0px;
+    }
+    .content tbody td {
+        width: 100px;
+        padding: 10px 0px;
+    }
 }
