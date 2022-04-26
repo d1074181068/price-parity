@@ -5,7 +5,7 @@ const search_btn = document.querySelector('.search_btn');
 const table_body = document.querySelector('.content tbody');
 const search_txt = document.querySelector('.search_adjust p');
 const input_txt = document.querySelector('.input');
-const page_ul = document.querySelector('.page_ul');
+const pageindex = document.querySelector('.page');
 const condition = document.querySelector('.condition');
 let all_data = [];
 let data = {
@@ -103,7 +103,7 @@ input_txt.addEventListener('keypress', (event) => {
     if (event.which == '13') {
         replace.textContent = '資料搜尋中...';
         table_body.innerHTML = '';
-        page_ul.innerHTML = '';
+        pageindex.innerHTML = '';
         setTimeout(() => {
             nav_li_reset();
             search();
@@ -118,7 +118,7 @@ input_txt.addEventListener('keypress', (event) => {
 search_btn.addEventListener('click', () => {
     replace.textContent = '資料搜尋中...';
     table_body.innerHTML = '';
-    page_ul.innerHTML = '';
+    pageindex.innerHTML = '';
     setTimeout(() => {
         search();
         if (replace.textContent == '很抱歉，你輸入的資料未找到') {
@@ -128,15 +128,13 @@ search_btn.addEventListener('click', () => {
         }
     }, 1000);
 });
-page_ul.addEventListener('click', (event) => {
-    event.preventDefault();
+pageindex.addEventListener('click', (event) => {
     const target = event.target;
-    currentPage = target.textContent;
+    currentPage = target.value;
     if (condition.value == '請選擇資料排列條件') {
         add_td(data.current);
-    } else {
-        add_td(data.display_sort);
     }
+    pageindex.value = currentPage;
 });
 condition.addEventListener('click', (event) => {
     const value = event.target.value;
@@ -197,7 +195,6 @@ function search() {
         if (isNaN(check_value)) {
             search_txt.textContent = `查看 「${value}」的查詢結果`;
             filter_data(value);
-            console.log(data.find);
             if (data.find.length == 0) {
                 replace.textContent = '很抱歉，你輸入的資料未找到';
                 return;
@@ -290,9 +287,9 @@ function render(data_in) {
     });
     listr = '';
     for (i = 1; i < pageTotal + 1; i++) {
-        listr += `<li><a href="#">${i}</a></li>`;
+        listr += `<option>${i}</option>`;
     }
-    page_ul.innerHTML = listr;
+    pageindex.innerHTML = listr;
     display_render();
 }
 
@@ -344,7 +341,6 @@ function filter_data(find_item) {
 }
 
 function get_data() {
-    // replace.textContent = '資料搜尋中 ... ';
     axios
         .get('https://hexschool.github.io/js-filter-data/data.json')
         .then(function(response) {
